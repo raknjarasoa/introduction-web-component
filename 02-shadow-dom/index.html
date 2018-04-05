@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+
+  <style>
+    p {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis eligendi dignissimos optio. Illum voluptatibus quo quae voluptas laborum nesciunt rem dolorum? Earum totam veritatis atque maiores fugit id est nesciunt!</p>
+
+  <div id="simple-div">
+
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet nisi ex totam placeat molestias recusandae debitis quam! Ipsam facere porro tempora exercitationem iusto animi, illo quaerat alias, rem voluptatibus deserunt.</p>
+  </div>
+
+  <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati pariatur eos veritatis voluptatibus temporibus laudantium molestias, fugit distinctio. Odio ut aperiam quam consequuntur nemo quibusdam voluptatum culpa doloribus dignissimos! Distinctio.</p>
+
+  <script>
+  let $div = document.getElementById('simple-div');
+
+  $div.attachShadow({
+    mode: 'open'
+  });
+
+  $div.shadowRoot.innerHTML = `
+    <style>
+      p {
+        color: blue;
+      }
+    </style>
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Obcaecati pariatur.</p>
+  `;
+  </script>
+</body>
+</html>

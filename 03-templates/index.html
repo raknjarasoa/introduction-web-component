@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <template id="list-item">
+    <li>
+      <h2> Title </h2>
+      <p> Inforqtion item</p>
+    </li>
+  </template>
+
+  <ul id="movie-list"></ul>
+
+  <script>
+    const items = [
+      {
+        title: 'Titre 1',
+        text: 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko)'
+      },
+      {
+        title: 'Titre 2',
+        text: '(KHTML, like Gecko) Chrome/65.0.3325.181 Safari/537.36'
+      },
+      {
+        title: 'Titre 3',
+        text: 'Thu Apr 05 2018 14:34:13 GMT+0400 (Mauritius Standard Time)'
+      }
+    ];
+    const $template = document.getElementById('list-item');
+    const $list = document.getElementById('movie-list');
+
+    items.forEach((movie) => {
+      const $clone = document.importNode($template.content, true);
+
+      $clone.querySelector('h2').innerText = movie.title;
+      $clone.querySelector('p').innerText = movie.text;
+      $list.appendChild($clone);
+    });
+  </script>
+</body>
+</html>

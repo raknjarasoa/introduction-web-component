@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="node_modules/document-register-element/build/document-register-element.js"></script>
+  <!-- <script src="./src/app.js" type="module"></script> -->
+  <script>
+    class CustomAnchor extends HTMLAnchorElement {
+      connectedCallback() {
+        this.addEventListener('click', (e) => {
+          e.preventDefault();
+
+          const result = confirm('Voulez vous vraiment vour rediriger vers cette page?');
+
+          if (result) {
+            window.location.href = e.currentTarget.href;
+          }
+        });
+      }
+    }
+
+    window.customElements.define('custom-anchor', CustomAnchor, { extends: "a" });
+  </script>
+</head>
+
+<body>
+  <a is="custom-anchor" href="http://www.google.com">Got to</a>
+</body>
+
+</html>
