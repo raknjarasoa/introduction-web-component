@@ -1,0 +1,20 @@
+{
+  "name": "introduction-web-component",
+  "version": "1.0.0",
+  "description": "Introduction to vanilla web component",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/raknjarasoa/introduction-web-component.git"
+  },
+  "keywords": [],
+  "author": "Njarasoa Rakotozafy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/raknjarasoa/introduction-web-component/issues"
+  },
+  "homepage": "https://github.com/raknjarasoa/introduction-web-component#readme"
+}
